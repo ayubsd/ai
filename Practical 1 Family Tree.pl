@@ -30,3 +30,44 @@ ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
 
 aunt(X, Y) :- sibling(X, Z), parent(Z, Y), female(X).
 uncle(X, Y) :- sibling(X, Z), parent(Z, Y), male(X).
+
+
+# Queries
+
+% Parent queries
+?- parent(john, mary).
+?- parent(robert, john).
+
+% Father queries
+?- father(john, mary).
+?- father(robert, linda).
+
+% Mother queries (after fixing the typo in the rule)
+?- mother(susan, peter).
+?- mother(susan, mary).
+
+% Sibling queries
+?- sibling(mary, peter).
+?- sibling(john, linda).
+
+% Grandfather queries
+?- grandfather(robert, alice).
+?- grandfather(john, bob).
+
+% Grandmother queries (after fixing the typo in the rule)
+?- grandmother(susan, alice).
+
+% Ancestor queries
+?- ancestor(john, alice).
+?- ancestor(robert, bob).
+?- ancestor(susan, alice).
+?- ancestor(peter, alice).
+
+% Aunt queries
+?- aunt(mary, bob).
+?- aunt(linda, mary).
+
+% Uncle queries
+?- uncle(peter, alice).
+?- uncle(john, linda).
+
